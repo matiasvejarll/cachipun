@@ -1,0 +1,32 @@
+
+body{
+    background-color: #2C7FCC;
+    
+}
+
+
+.card{
+    background-color: #0F364C;
+    color: #ffff ;
+    border: 1px solid black;
+}
+.contenedor{
+    width: 100%;
+    max-height: 100%;
+}
+.iconos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    font-size: 4rem;
+}
+.iconosEnSi{
+    height: 300px; 
+}
+.row{
+    width: 70rem;
+}
+#papel:hover , #tijeras:hover, #piedra:hover{
+    border:1px solid white;
+}
