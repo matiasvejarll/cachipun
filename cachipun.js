@@ -2,7 +2,7 @@
 
 let ganadasJugador = 0;
 let ganadasCpu = 0;
-
+let textoGanador = $("#textoGanador")
 $("#piedra").on("click", function () {
 
     $("#iconoContadorJ").attr("class","fa-regular fa-hand-back-fist");
@@ -25,6 +25,9 @@ $("#btnReiniciar").on("click",reiniciar)
 function reiniciar(){
     ganadasJugador = 0;
     ganadasCpu = 0;
+    $("#iconoContadorJ").attr("class","fa-regular fa-hand");
+    $("#iconoContadorCPU").attr("class","fa-regular fa-hand");
+    textoGanador.html("")
     contadorGanadas()
 }
 
@@ -39,44 +42,44 @@ function jugadaCPU(jugada_usuario) {
     if (jugada_usuario == 1) {
         if (jugada_cpu == 1) {
             iconoJugadaCPU(1)
-            alert("empate")
+            textoGanador.html("empate")
         } else if (jugada_cpu == 2) {
             iconoJugadaCPU(2)
             ganadasCpu++
-            alert("Perdio, yo elijo papel")
+            textoGanador.html("Perdio, yo elijo papel")
         } else {
             iconoJugadaCPU(3)
             ganadasJugador++
-            alert("Ha ganado")
+            textoGanador.html("Ha ganado")
         }
         //usuario elige papel
     } else if (jugada_usuario == 2) {
         if (jugada_cpu == 1) {
             iconoJugadaCPU(1)
             ganadasJugador++
-            alert("Ha ganado")
+            textoGanador.html("Ha ganado")
         } else if (jugada_cpu == 2) {
             iconoJugadaCPU(2)
-            alert("empate")
+            textoGanador.html("empate")
         } else {
             iconoJugadaCPU(3)
             ganadasCpu++
-            alert("Perdio, yo elijo tijeras")
+            textoGanador.html("Perdio, yo elijo tijeras")
         }
         //usuario elige tijeras
     } else if (jugada_usuario == 3) {
         if (jugada_cpu == 1) {
             iconoJugadaCPU(1)
             ganadasCpu++
-            alert("Perdio, yo elijo piedra")
+            textoGanador.html("Perdio, yo elijo piedra")
 
         } else if (jugada_cpu == 2) {
             iconoJugadaCPU(2)
             ganadasJugador++
-            alert("Ha ganado")
+            textoGanador.html("Ha ganado")
         } else {
             iconoJugadaCPU(3)
-            alert("empate")
+            textoGanador.html("empate")
 
         }
     }
@@ -116,35 +119,35 @@ function contadorGanadas(){
 
 
 
-const jugada_usuario = alert('Elija\n1: Piedra\n2:Papel\n3: Tijeras')
+const jugada_usuario = textoGanador.html('Elija\n1: Piedra\n2:Papel\n3: Tijeras')
 const jugada_cpu = Math.ceil(Math.random() * 3)
 if(jugada_usuario == 1){
     if(jugada_cpu == 1){
-        alert("empate")
+        textoGanador.html("empate")
     }else if(jugada_cpu == 2){
-        alert("Perdio, yo elijo papel")
+        textoGanador.html("Perdio, yo elijo papel")
     }else{
-        alert("Ha ganado")
+        textoGanador.html("Ha ganado")
     }
 }else if (jugada_usuario == 2){
     if(jugada_cpu == 1){
-        alert("Ha ganado")
+        textoGanador.html("Ha ganado")
     }else if(jugada_cpu == 2){
-        alert("empate")
+        textoGanador.html("empate")
     }else{
-        alert("Perdio, yo elijo tijeras")
+        textoGanador.html("Perdio, yo elijo tijeras")
     }
 }else if(jugada_usuario == 3){
     if(jugada_cpu == 1){
-        alert("Perdio, yo elijo piedra")
+        textoGanador.html("Perdio, yo elijo piedra")
         
     }else if(jugada_cpu == 2){
-        alert("Ha ganado")
+        textoGanador.html("Ha ganado")
     }else{
-        alert("empate")
+        textoGanador.html("empate")
        
     }
 }else{
-    alert("Debe escoger una de las opciones")
+    textoGanador.html("Debe escoger una de las opciones")
 }
 */
